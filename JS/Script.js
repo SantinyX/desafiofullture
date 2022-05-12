@@ -1,16 +1,38 @@
-let adicionar = document.getElementById("addTarefa");
-let btn_adicionar = document.getElementById("add_tarefa");
 
+//criar array para armazenar os itens
+let adicionar = document.getElementById("addTarefa")
+let taskArray = Array();
 
-const exibirInformacao = function(){
+//Ajustar formulario e declarar as variaveis 
+const formulario = document.querySelector("form");
+formulario.addEventListener("submit", function(event){
 
-    if ( adicionar.value == ""){
-        alert("Tarefa não infomada!");
-    }
-    else{
+    event.preventDefault();
+    //capturar os elementos digitado pelos usuários 
+       if ( adicionar.value == ""){
+        alert("Digite a tarefa");
+        return false;
+        }
+        else {
         console.log(adicionar.value);
-    }
-}
+        }
+    //criação do item
+    let item = {
+        addTarefa: adicionar.value, status:"Pendente"        
+    };   
 
-btn_adicionar.addEventListener("click", exibirInformacao );
+     console.log(item);
+
+     let add = document.getElementById('todo_list')
+     add.innerHTML = item.addTarefa
+
+     console.log(add)  
+});
+
+
+//FUNCTION DOM(OBJ){}
+//criar tabela que já existe no HTML
+/*const form = documento.querySelector("local que deseja")*/
+
+//CRIAR LAÇOS ENTRE ELEMENTOS
 
