@@ -1,19 +1,24 @@
-let taskArray = Array();
+//SCRIPT DE ESTUDO!!!
 
-const getInputs = (event) => {
-    //cancelamento parcial do evento apra não atualizar a pag
-    event.preventDefault()
+/*
 
-    //recolhendo texto digitado no input    
-    let adicionarTarefa = document.getElementById('add_tarefa').value
+JSON O QUE É*
 
-    //adicionar o objeto no array
-    taskArray.push({adicionarTarefa, status: "Pendente"})
-    console.log({taskArra})
-    addElementToList()
-    checkItem()
+Eviar para o DOM e armazenar para o localStorage
+
+
+
+
+
+
+
+IF(TAREFA != NULL){
+    mais o que foi no array = localstorage
 }
 
 
 
-    
+
+
+
+*/    

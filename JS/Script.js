@@ -1,11 +1,10 @@
 
-//criar array para armazenar os itens
-let adicionar = document.getElementById("addTarefa")
-let taskArray = Array();
-
 //Ajustar formulario e declarar as variaveis 
-const formulario = document.querySelector("form");
+const formulario = document.querySelector("form")
+
 formulario.addEventListener("submit", function(event){
+    //criar array para armazenar os itens
+    let adicionar = document.getElementById("addTarefa")
 
     event.preventDefault();
     //capturar os elementos digitado pelos usuários 
@@ -13,21 +12,22 @@ formulario.addEventListener("submit", function(event){
         alert("Digite a tarefa");
         return false;
         }
-        else {
-        console.log(adicionar.value);
-        }
+      
     //criação do item
     let item = {
         addTarefa: adicionar.value, status:"Pendente"        
-    };   
+    }
 
-     console.log(item);
+    
 
-     let add = document.getElementById('todo_list')
-     add.innerHTML = item.addTarefa
+     console.log(item)
 
-     console.log(add)  
-});
+})
+
+function addTarefa(event){
+
+}
+
 
 
 //FUNCTION DOM(OBJ){}
@@ -35,4 +35,6 @@ formulario.addEventListener("submit", function(event){
 /*const form = documento.querySelector("local que deseja")*/
 
 //CRIAR LAÇOS ENTRE ELEMENTOS
+
+/**/
 
