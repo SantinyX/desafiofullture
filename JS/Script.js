@@ -1,3 +1,5 @@
+const logado = JSON.parse (sessionStorage.getItem("controleAtividade.logado"))
+if(logado){
 //Ajustar formulario e declarar as variaveis 
 const formulario = document.querySelector("form")
 let lista = Array()
@@ -5,14 +7,18 @@ let lista = Array()
 let atividadeArmazenada = localStorage.getItem("armazenamentoAtividade.atividade")
 
 let listaTemp = Array()
-if(atividadeArmazenada != null){
+if (atividadeArmazenada != null) {
     listaTemp = JSON.parse(atividadeArmazenada)
+
+    listaTemp.forEach((obj)=>{
+        lista(obj)
+    })
 
 
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("load");
+
 
     lista.push({
         tittle: "Estudar Algoritmo",
@@ -39,9 +45,6 @@ formulario.addEventListener("submit", function (event) {
     if (tarefa.value == "") {
         alert("Preencha o campo")
         return false
-    }else{
-        localStorage.setItem("armazenamentoAtividade.atividade"), JSON.stringify(lista)
-        lista.push
     }
 
     lista.push({
@@ -49,21 +52,22 @@ formulario.addEventListener("submit", function (event) {
         status: "uncompleted"
     });
     atualizar(lista);
-    console.log('lista', lista);
+
 });
 //seleção do status
 let selectStatus = document.getElementById("selectStatus");
 //evento change
 selectStatus.addEventListener('change', function (event) {
     event.preventDefault();
-    
+
     let itensTemp = new Array();
     if (selectStatus.value === 'all') {
         for (i = 0; i < lista.length; i++) {
             itensTemp.push(lista[i]);
-        }    
+        }
         atualizar(itensTemp);
         return;
+
     }
 
     for (i = 0; i < lista.length; i++) {
@@ -89,10 +93,16 @@ function getItem(tittle, index) {
     let btnCheck = document.createElement('button');
     btnCheck.setAttribute('class', 'check-btn');
     btnCheck.addEventListener('click', function (event) {
+        for (let i = 0; i < btnCheck.length; i++) {
+            let whatDiv = btnCheck[i].parentElement;
+            whatDiv.setAttribute("class", "completed todo");
+            selectStatus[i].status = "Finalizada"
+        }
         //função!!!!(index)
         finalizar(index)
     });
     let iconCheck = document.createElement('i');
+
     //pesquisar "aria-hidden"
     iconCheck.setAttribute('class', 'fas fa-check');
     iconCheck.setAttribute('aria-hidden', 'true');
@@ -113,9 +123,11 @@ function getItem(tittle, index) {
     iconTrash.setAttribute('aria-hidden', 'true');
     btnTrash.appendChild(iconTrash);
     div.appendChild(btnTrash)
-    
+
     return div;
 }
+
+
 
 function atualizar(itens) {
     //Limpa a lista
@@ -124,25 +136,37 @@ function atualizar(itens) {
     let todolist = document.querySelector(".todo-list");
     todolist.textContent = "";
     for (i = 0; i < itens.length; i++) {
-        itensTemp.push(itens[i]);    
+        itensTemp.push(itens[i]);
         todolist.appendChild(getItem(itens[i].tittle, i));
     }
     listaTemp = itensTemp;
+
+
+    //armazenar string
+    localStorage.setItem("controleAtividades.atividade", JSON.stringify(itensTemp))
 }
 
 function remover(index) {
 
-    console.log('index', index)
+
     //remoção do item do array
     listaTemp.shift(index)
-    console.log('listaTemp', listaTemp)
+
     atualizar(listaTemp)
+
 }
 
 function finalizar(index) {
-    console.log('index', index)
+
     //remoção do item do array
     listaTemp[index].status = 'completed'
-    console.log('listaTemp', listaTemp)
+
+
     atualizar(listaTemp)
 }
+}else{
+    window.location = "Login.html"
+}
+
+
+
