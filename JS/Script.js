@@ -67,7 +67,6 @@ selectStatus.addEventListener('change', function (event) {
         }
         atualizar(itensTemp);
         return;
-
     }
 
     for (i = 0; i < lista.length; i++) {
@@ -93,11 +92,7 @@ function getItem(tittle, index) {
     let btnCheck = document.createElement('button');
     btnCheck.setAttribute('class', 'check-btn');
     btnCheck.addEventListener('click', function (event) {
-        for (let i = 0; i < btnCheck.length; i++) {
-            let whatDiv = btnCheck[i].parentElement;
-            whatDiv.setAttribute("class", "completed todo");
-            selectStatus[i].status = "Finalizada"
-        }
+        
         //função!!!!(index)
         finalizar(index)
     });
@@ -160,8 +155,6 @@ function finalizar(index) {
 
     //remoção do item do array
     listaTemp[index].status = 'completed'
-
-
     atualizar(listaTemp)
 }
 }else{
