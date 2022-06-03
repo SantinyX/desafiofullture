@@ -1,13 +1,13 @@
 body{
-    background-image: url(/pexels-neo-2653362\ 1.png);
+    background: url(/pexels-neo-2653362\ 1.png);
     background-repeat: no-repeat;
     max-width: 100%;
     margin: 0%;
     width: 1280px;
-    height: 720px;
+    height: 720px;    
 }
+
 form {
- box-sizing: border-box;
  position: absolute;
  width: 343px;
  height: 366px;
@@ -34,7 +34,7 @@ form {
 }
 
 #input_usuario {
-    position: absolute;
+ position: absolute;
  width: 274px;
  height: 32px;
  left: 30px;
@@ -70,35 +70,22 @@ form {
 }
 
 #submit {
-    display: flex;
- flex-direction: row;
- align-items: center;
- padding: 10px 10px 12px 37px;
- gap: 10px;
+ 
+ padding: 10px 10px 12px 37px; 
  position: absolute;
  width: 145px;
  height: 62px;
- left: 100px;
+ left: 110px;
  top: 250px;
  background: #151515;
- border-radius: 10px;
- z-index: auto;  
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-line-height: 30px;
-display: flex;
-align-items: center;
-cursor: pointer;
-
-color: #E5E5E5;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+ border-radius: 10px; 
+ font-style: normal;
+ font-weight: 600;
+ font-size: 24px;
+ display: flex;
+ align-items: center;
+ cursor: pointer;
+ color: #E5E5E5;
 }
 
 
