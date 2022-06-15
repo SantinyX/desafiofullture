@@ -1,19 +1,23 @@
-body{
+html, body{
     background: url(/pexels-neo-2653362\ 1.png);
-    background-repeat: no-repeat;
-    max-width: 100%;
-    margin: 0%;
-    width: 1280px;
-    height: 720px;    
+   
+}
+
+.container{
+    display: flex;
+    text-align: center;
+    position: absolute;
+    width: 100%;
 }
 
 form {
- position: absolute;
+    display: inline-block;
+    position: relative;
+
  width: 343px;
  height: 366px;
- left: 485px;
- padding: 10px;
- top: 240px;
+ 
+ 
  background: linear-gradient(0deg, rgba(186, 154, 92, 0.71), rgba(186, 154, 92, 0.71)), rgba(185, 172, 147, 0.96);
  mix-blend-mode: hard-light;
  opacity: 0.81;

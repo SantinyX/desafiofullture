@@ -15,9 +15,8 @@ if (logado) {
         lista.forEach((obj) => {
             return;
         })
-    }else{
-
     }
+    
     console.log(lista)
 
     document.addEventListener('DOMContentLoaded', function (Dom) {
