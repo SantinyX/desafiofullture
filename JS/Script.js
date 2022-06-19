@@ -124,7 +124,8 @@ if (logado) {
         for (i = 0; i < itens.length; i++) {
             itensTemp.push(itens[i]);
             todolist.appendChild(getItem(itens[i].tittle, i));
-        }
+        }        
+
         listaTemp = itensTemp;
 
         localStorage.setItem("controleAtividades.atividade", JSON.stringify(lista))
